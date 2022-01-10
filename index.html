@@ -633,10 +633,9 @@
   </li>
 </ul>
 <h3 id='donate'>Donate</h3>
-<ul>
-<li><strong>BTC</strong>: 3NVw2seiTQddGQwc1apqudKxuTqebpyL3s</li>
-<li><strong>ETH</strong>: 0x60dd373f59862d9df776596889b997e24bee42eb</li>
-</ul>
+<p><img alt="uJhin's BTC" src="https://img.shields.io/badge/BTC-3NVw2seiTQddGQwc1apqudKxuTqebpyL3s-blue?style=flat-square&logo=bitcoin">
+<br/>
+<img alt="uJhin's ETH" src="https://img.shields.io/badge/ETH-0x60dd373f59862d9df776596889b997e24bee42eb-blue?style=flat-square&logo=ethereum"></p>
 <h1 id='change-logs'>Change Logs</h1><h2 id='2021'>2021</h2><h3 id='2021-12-06'>2021-12-06</h3>
 <p>Upbit Client Released: v1.2.2.2</p>
 
@@ -5285,8 +5284,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="c1"># Definition async function
 </span><span class="k">async</span> <span class="k">def</span> <span class="nf">ticker</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">sock</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-            <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
             <span class="n">recv</span> <span class="o">=</span> <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">recv</span><span class="p">()</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">recv</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
