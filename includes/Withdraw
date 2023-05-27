@@ -905,17 +905,36 @@ Open API를 이용하여 출금을 진행하기 위해서는 출금허용주소 
 <h3 id='operation-code-5'>Operation Code</h3>
 <p><code>Withdraw.Withdraw_krw</code></p>
 <h3 id='request-5'>요청 (Request)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>amount *</td>
-<td>출금액 (출금 원화 수량)</td>
-</tr>
-</tbody></table>
+<table>
+  <tr>
+    <th>
+      Parameter
+    </th>
+    <th>
+      Description
+    </th>
+  </tr>
+  <tr>
+    <td>
+        amount *
+    </td>
+    <td>
+        출금액 (출금 원화 수량)
+    </td>
+  </tr>
+  <tr>
+    <td>
+        two_factor_type
+    </td>
+    <td>
+        2차 인증 수단 (기본값: <code>kakao_pay</code>)
+        <ul>
+            <li>kakao_pay: 카카오 페이 인증 (기본값)</li>
+            <li>naver: 네이버 인증</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 <h3 id='response-5'>응답 (Response)</h3>
 <table>
   <tr>
@@ -1023,9 +1042,7 @@ Open API를 이용하여 출금을 진행하기 위해서는 출금허용주소 
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_krw</span><span class="p">(</span>
-    <span class="n">amount</span><span class="o">=</span><span class="s">'10000'</span>
-<span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_coin_addresses</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
@@ -1038,14 +1055,14 @@ Open API를 이용하여 출금을 진행하기 위해서는 출금허용주소 
   </span><span class="nl">"secondary_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='method-6'>Method</h3>
-<p><strong>POST</strong> <code>/v1/withdraws/krw</code></p>
+<p><strong>POST</strong> <code>/v1/withdraws/coin_addresses</code></p>
 <h3 id='operation-code-6'>Operation Code</h3>
-<p><code>Withdraw.Withdraw_krw</code></p>
+<p><code>Withdraw.Withdraw_coin_addresses</code></p>
 <h3 id='request-6'>요청 (Request)</h3>
 <p>No Parameters</p>
 
 <aside class="notice">
-  <b>[NOTE] 출금 기능을 이용하기 위해서는 주소 등록이 필요합니다.</b>
+  <b>NOTE: 출금 기능을 이용하기 위해서는 주소 등록이 필요합니다.</b>
   <br/><br/>
   Open API를 통해 디지털 자산을 출금하기 위해서는 출금 허용 주소 등록이 필요합니다.
   <br/><br/>
